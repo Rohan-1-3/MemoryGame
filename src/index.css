@@ -1,21 +1,47 @@
 body {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/947/702/550/daredevil-marvel-comics-wallpaper-preview.jpg);
   margin: 0;
+  padding: 0;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 img{
-  height: 10em;
+  height: 25em;
+  width: 17em;
+  border-radius: 5em;
+  transition: all .5s;
+  cursor: pointer;
 }
 
 .image-container{
+  display: grid;
+  justify-content: space-around;
+  gap: 0.5em;
+  grid-template-rows: repeat(auto-fit, minmax(5em,30em));
+  grid-template-columns: repeat(auto-fit, minmax(5em, 19em));
+}
+
+
+.image-container > div{
+  padding-top: 1em;
+  text-align: center;
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/947/702/550/daredevil-marvel-comics-wallpaper-preview.jpg);
+  border-radius: 4em;
+  transition: all .5s;
+  color: white;
+}
+
+.image-container > div :hover{
+  opacity: .8;
+  height: 100%;
+}
+
+.score-container{
   display: flex;
+  justify-content: space-around;
 }

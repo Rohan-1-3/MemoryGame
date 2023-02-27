@@ -2,17 +2,16 @@ import React from "react";
 
 function Header({ score, highScore }) {
   return (
-    <header>
-      <h1>Superhero Memory Game</h1>
+    <div>
       <div className="score-container">
         <div className="score">
-          <span>Score: {score}</span>
+          <h1>Score: {score}</h1>
         </div>
         <div className="score">
-          <span>High Score: {highScore}</span>
+          <h1>High Score: {highScore}</h1>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 

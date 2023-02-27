@@ -2,7 +2,6 @@ import blackpanther from "./images/blackpanther.jpg";
 import blackwidow from "./images/blackwidow.jpeg";
 import captainAmerica from "./images/captainamerica.jpg";
 import colossus from "./images/colossus.jpeg";
-import cyclops from "./images/cyclops.jpg";
 import daredevil from "./images/daredevil.jpg";
 import deadpool from "./images/deadpool.jpg";
 import drstrange from "./images/drstrange.jpg";
@@ -13,7 +12,6 @@ import moonknight from "./images/moonknight.jpg";
 import professorX from "./images/professorX.jpg";
 import punisher from "./images/punisher.jpg";
 import scarletwitch from "./images/scarletwitch.jpeg"
-import shangchi from "./images/shangchi.jpg";
 import silversurfer from "./images/silversurfer.jpg";
 import spiderman from "./images/spiderman.jpg";
 import spiderman2099 from "./images/spiderman2099.jpg";
@@ -22,10 +20,9 @@ import vision from "./images/vision.jpg";
 import wolverin from "./images/wolverine.jpg"
 
 const imagesArr = [blackpanther, blackwidow, captainAmerica, colossus, spiderman
-                    , ironman, cyclops, daredevil, deadpool, drstrange, hawkeye,
+                    , ironman, daredevil, deadpool, drstrange, hawkeye,
                     hulk, moonknight, professorX, punisher, scarletwitch,
-                    shangchi, silversurfer, spiderman2099, thor, vision, 
-                    wolverin]
+                    silversurfer, spiderman2099, thor, vision, wolverin]
 export function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

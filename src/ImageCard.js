@@ -9,6 +9,7 @@ function ImageCard({ superhero, image, imageCounter }) {
         onClick={() => imageCounter(superhero)}
         className={superhero}
       />
+      <h2>{superhero.toUpperCase()}</h2>
     </div>
   );
 }
