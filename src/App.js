@@ -7,7 +7,7 @@ import GameWon from "./GameWon";
 
 function App() {
   const newArr = imagesArr.map((image) =>
-    image.slice(14, image.indexOf("."))// extracting only the name of superhero
+    image.slice(image.indexOf("a/")+2, image.indexOf("."))// extracting only the name of superhero
   );
 
   const elementCounts = newArr.reduce(
