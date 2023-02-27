@@ -1,54 +1,64 @@
-import imagesArr, {shuffleArray} from "./Images";
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Header from "./Header";
+import ImageCard from "./ImageCard";
+import GameOver from "./GameOver";
+import imagesArr, { shuffleArray } from "./Images";
 
 function App() {
-  const newArr = imagesArr.map(image => image.slice(14,image.indexOf(".")));
+  const newArr = imagesArr.map((image) =>
+    image.slice(14, image.indexOf("."))
+  );
 
-  const elementCounts = newArr.reduce((count, item) => 
-              ((count[item] = count[item] + 1 || 1, count)), {});
+  const elementCounts = newArr.reduce(
+    (count, item) => (((count[item] = count[item] + 1 || 1), count)),
+    {}
+  );
 
   const [images, setImageCounter] = useState(elementCounts);
   const [gameStatus, setGameStatus] = useState(false);
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  console.log(images)
 
-  const imageCounter = (some)=>{
-    if(images[some] === 2){
-      setGameStatus(true)
-      setScore(0)
-      return false
+  const imageCounter = (superhero) => {
+    if (images[superhero] === 2) {
+      setGameStatus(true);
+      setScore(0);
+      return false;
     }
-    shuffleArray(imagesArr)
-    setHighScore(highScore+1)
-    setScore(score+1)
-    setImageCounter(prevImages => ({ ...prevImages, [some]: prevImages[some] + 1 }))
-  }
+    shuffleArray(imagesArr);
+    setHighScore((prevScore) => prevScore + 1);
+    setScore((prevScore) => prevScore + 1);
+    setImageCounter((prevImages) => ({
+      ...prevImages,
+      [superhero]: prevImages[superhero] + 1,
+    }));
+  };
 
   const displayImages = imagesArr.map((x, index) => {
-    return(
-      <img src={x} alt="" onClick={()=>imageCounter(x.slice(14,x.indexOf(".")))}
-      className={x.slice(14,x.indexOf("."))}
-      key={newArr[index]}/>
-    )
-  })
-  if(gameStatus){
-    return(
-      <div>
-      <h1>High Score: {highScore}</h1>
-      <h1>Score: {score}</h1>
-    Game Over
-    </div>
-    )
-  }else{return (
-    <div className="App">
-      <h1>High Score: {highScore}</h1>
-      <h1>Score: {score}</h1>
-      {displayImages}
+    const superhero = newArr[index];
+    return (
+      <ImageCard
+        key={superhero}
+        superhero={superhero}
+        image={x}
+        imageCounter={imageCounter}
+      />
+    );
+  });
 
+  return (
+    <div className="container">
+      {gameStatus ? (
+        <GameOver highScore={highScore} />
+      ) : (
+        <React.Fragment>
+          <Header score={score} highScore={highScore} />
+          <div className="image-container">{displayImages}</div>
+        </React.Fragment>
+        
+      )}
     </div>
-  );}
-  
+  );
 }
 
 export default App;
