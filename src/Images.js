@@ -25,7 +25,7 @@ const imagesArr = [blackpanther, blackwidow, captainAmerica, colossus, spiderman
                     hulk, moonknight, professorX, punisher, scarletwitch,
                     silversurfer, spiderman2099, thor, vision, wolverin, cyclops]
 
-export function shuffleArray(array) {
+export function shuffleArray(array) { // shuffleing the superheroes array randomly
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];

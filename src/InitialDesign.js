@@ -14,8 +14,8 @@ function InitialDesign({title, href}) {
             </main>
             <footer>
                 <span>Created By: rohan-1-3</span>
-                <a href={href}>
-                    <img src={Github} alt="img" target="_blank"/>
+                <a href={href} target="_blank" rel="noreferrer">
+                    <img src={Github} alt="img" />
                 </a>
             </footer>
         </React.Fragment>
