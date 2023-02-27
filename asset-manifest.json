@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MemoryGame/static/css/main.a3a24529.css",
-    "main.js": "/MemoryGame/static/js/main.122481e2.js",
+    "main.js": "/MemoryGame/static/js/main.eca216d2.js",
     "static/media/spiderman.jpg": "/MemoryGame/static/media/spiderman.23f2ca6358110c639102.jpg",
     "static/media/professorX.jpg": "/MemoryGame/static/media/professorX.852c6ac62bb4c57cd2f1.jpg",
     "static/media/deadpool.jpg": "/MemoryGame/static/media/deadpool.cefed4b3452934bf8b79.jpg",
@@ -25,10 +25,10 @@
     "static/media/blackwidow.jpeg": "/MemoryGame/static/media/blackwidow.f4f49c02a0fcfac04ea5.jpeg",
     "index.html": "/MemoryGame/index.html",
     "main.a3a24529.css.map": "/MemoryGame/static/css/main.a3a24529.css.map",
-    "main.122481e2.js.map": "/MemoryGame/static/js/main.122481e2.js.map"
+    "main.eca216d2.js.map": "/MemoryGame/static/js/main.eca216d2.js.map"
   },
   "entrypoints": [
     "static/css/main.a3a24529.css",
-    "static/js/main.122481e2.js"
+    "static/js/main.eca216d2.js"
   ]
 }
