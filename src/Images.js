@@ -23,6 +23,7 @@ const imagesArr = [blackpanther, blackwidow, captainAmerica, colossus, spiderman
                     , ironman, daredevil, deadpool, drstrange, hawkeye,
                     hulk, moonknight, professorX, punisher, scarletwitch,
                     silversurfer, spiderman2099, thor, vision, wolverin]
+                    
 export function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

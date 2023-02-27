@@ -1,5 +1,6 @@
 import React from 'react';
 import App from './App';
+import Github from "./images/github.png"
 import "./initialdesign.css"
 
 function InitialDesign({title, href}) {
@@ -14,7 +15,7 @@ function InitialDesign({title, href}) {
             <footer>
                 <span>Created By: rohan-1-3</span>
                 <a href={href}>
-                    <img src="" alt="img" target="_blank"/>
+                    <img src={Github} alt="img" target="_blank"/>
                 </a>
             </footer>
         </React.Fragment>

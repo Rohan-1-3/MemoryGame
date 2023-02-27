@@ -3,6 +3,7 @@ import Header from "./Header";
 import ImageCard from "./ImageCard";
 import GameOver from "./GameOver";
 import imagesArr, { shuffleArray } from "./Images";
+import GameWon from "./GameWon";
 
 function App() {
   const newArr = imagesArr.map((image) =>
@@ -15,24 +16,35 @@ function App() {
   );
 
   const [images, setImageCounter] = useState(elementCounts);
-  const [gameStatus, setGameStatus] = useState(false);
+  const [gameLost, setGameLost] = useState(false);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [gameWon, setGameWon] = useState(false);
 
   const imageCounter = (superhero) => {
+    if(score === newArr.length-1){
+      setGameWon(true);
+      return false;
+    }
     if (images[superhero] === 2) {
-      setGameStatus(true);
-      setScore(0);
+      setGameLost(true);
       return false;
     }
     shuffleArray(imagesArr);
-    setHighScore((prevScore) => prevScore + 1);
+    setHighScore((prevScore) => (prevScore === score) ?prevScore + 1 : prevScore);
     setScore((prevScore) => prevScore + 1);
     setImageCounter((prevImages) => ({
       ...prevImages,
       [superhero]: prevImages[superhero] + 1,
     }));
   };
+
+  const resetGame = ()=>{
+    shuffleArray(imagesArr)
+    setGameLost(false);
+    setScore(0);
+    setImageCounter(elementCounts)
+  }
 
   const displayImages = imagesArr.map((x, index) => {
     const superhero = newArr[index];
@@ -48,8 +60,12 @@ function App() {
 
   return (
     <div className="container">
-      {gameStatus ? (
-        <GameOver highScore={highScore} />
+      {gameLost ? (
+        <GameOver highScore={highScore} score={score} resetGame = {resetGame}/>
+      ) : gameWon ?(
+        <React.Fragment>
+          <GameWon/>
+        </React.Fragment>
       ) : (
         <React.Fragment>
           <Header score={score} highScore={highScore} />

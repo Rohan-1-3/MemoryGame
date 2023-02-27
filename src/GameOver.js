@@ -1,11 +1,16 @@
 import React from "react";
 
-function GameOver({highScore}) {
+function GameOver({highScore, score, resetGame}) {
   return (
-    <React.Fragment>
+    <div className="game-over">
+        <h1>Game Over</h1>  
+        <button onClick={resetGame}>Play Again</button>
         <h1>High Score: {highScore}</h1>
-      <h2>Game Over</h2>
-    </React.Fragment>
+        <h1>Score: {score}</h1>
+        
+        <img src="https://media.tenor.com/voHFmiEPAioAAAAC/failure.gif"
+            alt=""/>
+    </div>
   );
 }
 

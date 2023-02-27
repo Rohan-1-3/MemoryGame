@@ -23,6 +23,7 @@ footer span{
 
 footer img{
     height: 3vw;
+    width: 3vw;
     position: relative;
     top: 0.8vw;
     transition: all .5s;
