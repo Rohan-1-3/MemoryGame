@@ -17,13 +17,14 @@ import spiderman from "./images/spiderman.jpg";
 import spiderman2099 from "./images/spiderman2099.jpg";
 import thor from "./images/thor.jpg";
 import vision from "./images/vision.jpg";
-import wolverin from "./images/wolverine.jpg"
+import wolverin from "./images/wolverine.jpg";
+import cyclops from "./images/cyclops.jpg"
 
 const imagesArr = [blackpanther, blackwidow, captainAmerica, colossus, spiderman
                     , ironman, daredevil, deadpool, drstrange, hawkeye,
                     hulk, moonknight, professorX, punisher, scarletwitch,
-                    silversurfer, spiderman2099, thor, vision, wolverin]
-                    
+                    silversurfer, spiderman2099, thor, vision, wolverin, cyclops]
+
 export function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
